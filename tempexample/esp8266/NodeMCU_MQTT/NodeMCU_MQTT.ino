@@ -13,8 +13,8 @@
 #define DUTNAME "MyESP8266"
 
 //WIFI網路的 SSID， 密碼
-const char* ssid = "222444";
-const char* password = "0977392492";
+const char* ssid = "your_wifi_ssid";
+const char* password = "your_wifi_password";
 
 //Third-party MQTT Broker Domain Name ＆ Port
 const char* mqtt_server = "broker.emqx.io";
@@ -45,7 +45,8 @@ void setup_wifi() {
     printf(".");
   }
 
-  printf("WiFi connected, IP:%s\n", WiFi.localIP().c_str());
+  printf("WiFi connected, IP:%s\n", WiFi.localIP().toString().c_str());
+  //printf("WiFi connected, IP:%s\n", WiFi.localIP().c_str());
 }
 
 void mqttconnect() {
