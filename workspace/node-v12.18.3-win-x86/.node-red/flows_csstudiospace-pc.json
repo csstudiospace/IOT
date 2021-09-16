@@ -1,0 +1,459 @@
+[
+    {
+        "id": "9b69d192.24d2e",
+        "type": "tab",
+        "label": "流程1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a7b64eb9.07dbf",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#4B7930",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#4B7930",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#6db046",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#4b7930",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "291e0b25.73f764",
+        "type": "ui_tab",
+        "name": "中控室",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7c3d92b7.144e8c",
+        "type": "ui_group",
+        "name": "101室",
+        "tab": "291e0b25.73f764",
+        "order": 1,
+        "disp": true,
+        "width": 7,
+        "collapse": false
+    },
+    {
+        "id": "3a601ef1.d1d042",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "7c3d92b7.144e8c",
+        "order": 2,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "1ee47fcd.5d26f",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "7c3d92b7.144e8c",
+        "order": 4,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "80fb18b6.1a0438",
+        "type": "http request",
+        "z": "9b69d192.24d2e",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://10.1.1.11/api/getdata",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "dc9d8750.5086d8",
+                "bbcd0065.834b4",
+                "ca08238d.6615b",
+                "f3643aab.2ce288"
+            ]
+        ]
+    },
+    {
+        "id": "8855f189.8a69f",
+        "type": "inject",
+        "z": "9b69d192.24d2e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "80fb18b6.1a0438"
+            ]
+        ]
+    },
+    {
+        "id": "dc9d8750.5086d8",
+        "type": "function",
+        "z": "9b69d192.24d2e",
+        "name": "震動",
+        "func": "if(msg.payload.vibration == 1){\n    msg.payload = \"有\";    \n}\nelse{\n    msg.payload = \"無\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 420,
+        "wires": [
+            [
+                "21873fcc.b3e4"
+            ]
+        ]
+    },
+    {
+        "id": "bbcd0065.834b4",
+        "type": "function",
+        "z": "9b69d192.24d2e",
+        "name": "溫度",
+        "func": "msg.payload = msg.payload.temp;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 480,
+        "wires": [
+            [
+                "a4078d26.47ed8"
+            ]
+        ]
+    },
+    {
+        "id": "ca08238d.6615b",
+        "type": "function",
+        "z": "9b69d192.24d2e",
+        "name": "距離",
+        "func": "msg.payload = msg.payload.sona;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 600,
+        "wires": [
+            [
+                "39319268.20301e"
+            ]
+        ]
+    },
+    {
+        "id": "f3643aab.2ce288",
+        "type": "function",
+        "z": "9b69d192.24d2e",
+        "name": "溼度",
+        "func": "msg.payload = msg.payload.hum\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 540,
+        "wires": [
+            [
+                "98a082aa.d5cbf"
+            ]
+        ]
+    },
+    {
+        "id": "a4078d26.47ed8",
+        "type": "ui_gauge",
+        "z": "9b69d192.24d2e",
+        "name": "",
+        "group": "7c3d92b7.144e8c",
+        "order": 7,
+        "width": 7,
+        "height": 6,
+        "gtype": "gage",
+        "title": "溫度",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "69",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "26",
+        "seg2": "30",
+        "x": 610,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "21873fcc.b3e4",
+        "type": "ui_text",
+        "z": "9b69d192.24d2e",
+        "group": "7c3d92b7.144e8c",
+        "order": 5,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "震動",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 610,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "39319268.20301e",
+        "type": "ui_text",
+        "z": "9b69d192.24d2e",
+        "group": "7c3d92b7.144e8c",
+        "order": 6,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "距離",
+        "format": "{{msg.payload}} 公分",
+        "layout": "row-spread",
+        "x": 610,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "98a082aa.d5cbf",
+        "type": "ui_chart",
+        "z": "9b69d192.24d2e",
+        "name": "",
+        "group": "7c3d92b7.144e8c",
+        "order": 8,
+        "width": 7,
+        "height": 5,
+        "label": "𤃁度",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 610,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "182f051e.e2506b",
+        "type": "ui_switch",
+        "z": "9b69d192.24d2e",
+        "name": "",
+        "label": "LED 1",
+        "tooltip": "",
+        "group": "7c3d92b7.144e8c",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "{\"name\":\"led1\",\"val\":1}",
+        "onvalueType": "json",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "{\"name\":\"led1\",\"val\":0}",
+        "offvalueType": "json",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 610,
+        "y": 660,
+        "wires": [
+            [
+                "9de9fd3a.cd61f"
+            ]
+        ]
+    },
+    {
+        "id": "9de9fd3a.cd61f",
+        "type": "http request",
+        "z": "9b69d192.24d2e",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://10.1.1.11/api/setdata?{{payload.name}}={{payload.val}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 747.0000076293945,
+        "y": 688.0000514984131,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59e68622.d58078",
+        "type": "ui_switch",
+        "z": "9b69d192.24d2e",
+        "name": "",
+        "label": "LED 2",
+        "tooltip": "",
+        "group": "7c3d92b7.144e8c",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "{\"name\":\"led2\",\"val\":1}",
+        "onvalueType": "json",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "{\"name\":\"led2\",\"val\":0}",
+        "offvalueType": "json",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 610,
+        "y": 720,
+        "wires": [
+            [
+                "9de9fd3a.cd61f"
+            ]
+        ]
+    }
+]
