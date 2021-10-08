@@ -106,7 +106,7 @@ void handleGetData() {
 
   //收集DHT11的溫、溼度值
   float temperature = dht.readTemperature();
-  float humidity = dht.readHumidity();;
+  float humidity = dht.readHumidity();
 
   //收集HC-SR04的距離值
   long duration;
