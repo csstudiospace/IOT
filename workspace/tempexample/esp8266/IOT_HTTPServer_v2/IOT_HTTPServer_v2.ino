@@ -2,7 +2,7 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 
-#include <SimpleDHT.h>
+#include <DHT.h>
 
 #define STASSID "cswork2.4"
 #define STAPSK  "22224444"
@@ -18,7 +18,7 @@
 const char* ssid = STASSID;
 const char* password = STAPSK;
 
-SimpleDHT11 dht11;
+DHT dht(TEMPERATURE_SENSOR_PIN, DHT11);
 ESP8266WebServer webserver(80);
 
 
@@ -70,7 +70,7 @@ void handleHome() {
   //定義SW420 網頁介面
   message += "<h2> 震動：<span id='vib'></span></h2>";
   
-  //定義DHT420 網頁介面
+  //定義DHT11 網頁介面
   message += "<h2> 溫度：<span id='temp'></span></h2>";
   message += "<h2> 溼度：<span id='hum'></span></h2>";
   
@@ -105,13 +105,8 @@ void handleGetData() {
   int vibration_val = digitalRead(VIBRATION_SENSOR_PIN);
 
   //收集DHT11的溫、溼度值
-  byte temperature = 0;
-  byte humidity = 0;
-  int temperr = SimpleDHTErrSuccess;
-  if((temperr = dht11.read(TEMPERATURE_SENSOR_PIN, &temperature, &humidity, NULL)) != SimpleDHTErrSuccess){
-    temperature = -1;
-    humidity = -1;
-  }
+  float temperature = dht.readTemperature();
+  float humidity = dht.readHumidity();;
 
   //收集HC-SR04的距離值
   long duration;
@@ -191,6 +186,9 @@ void setup(void)
 
   //聲納trig 輸出模式
   pinMode(SONA_TRIG_SENSOR_PIN,OUTPUT);
+
+  //DHT11 初始化
+  dht.begin();
 
   //WiFi連線
   WiFi.mode(WIFI_STA);
