@@ -2,36 +2,30 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 
-#define STASSID "cswork_2.4G"
-#define STAPSK  "88888888"
+#define STASSID "cswork2.4"
+#define STAPSK  "22224444"
 
 const char* ssid = STASSID;
 const char* password = STAPSK;
 ESP8266WebServer server(80);
 
 //Sensor-VCC -> DUT-3V pin
-#include <SimpleDHT.h>
+#include <DHT.h>
 
-int pinDHT11 = D4;  //D4 Pin腳 讀取DATA
-SimpleDHT11 dht11;  //dht11 class
+int pinDHT11 = D3;  //D3 Pin腳 讀取DATA
+DHT dht(pinDHT11, DHT11);  //dht11 class
 
-byte gTemperature = 0;
-byte gHumidity = 0;
 
 void handleRoot() {
   char sendStr[1024];
 
   memset(sendStr, 0, sizeof(sendStr));
 
-  //取得 溫度 & 溼度
-  int err = SimpleDHTErrSuccess;
-  if ((err = dht11.read(pinDHT11, &gTemperature, &gHumidity, NULL)) != SimpleDHTErrSuccess) {
-    //讀取失敗的話，清為0
-    gTemperature = 0;
-    gHumidity = 0;
-  }
+  //收集DHT11的溫、溼度值
+  float temperature = dht.readTemperature();
+  float humidity = dht.readHumidity();
 
-  sprintf( sendStr, "目前溫度 %d C, 溼度 %d %%", gTemperature, gHumidity);
+  sprintf( sendStr, "目前溫度 %d C, 溼度 %d %%", (int)temperature, (int)humidity);
   server.send(200, "text/plain", sendStr);
 }
 
@@ -59,6 +53,9 @@ void setup(void)
   WiFi.begin(ssid, password);
   printf("\n");
 
+  //DHT11 初始化
+  dht.begin();
+  
   // Wait for WiFi connection
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
