@@ -290,159 +290,6 @@
         "collapse": false
     },
     {
-        "id": "602af2e8.f7807c",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "eb3adf1f.8164c",
-        "order": 3,
-        "width": 12,
-        "height": 1
-    },
-    {
-        "id": "bf93d7f3.82f6c8",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "eb3adf1f.8164c",
-        "order": 4,
-        "width": 12,
-        "height": 1
-    },
-    {
-        "id": "ab7f5ae9.e0a0a8",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "dc2921a9.cfd04",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "7b0328e0.645c08",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "dc2921a9.cfd04",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "4933c533.568a7c",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "dc2921a9.cfd04",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a2a80521.8f3b78",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "95990b3d.d35608",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "e8106607.2f9778",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "95990b3d.d35608",
-        "order": 6,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "112178b8.215c67",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "88cfddb3.8c3f6",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "7cc36b0c.674ed4",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "88cfddb3.8c3f6",
-        "order": 4,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "c2a02b5e.c17be8",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "bcf90805.773598",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 4,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "7c803206.35dc7c",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 6,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "16aaedae.90c422",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 8,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "1c4040ed.b9145f",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 9,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "96237139.fd8ea",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 11,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "789619e6.724428",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 15,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "b1fbcebe.eba67",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "b0c87eba.f5866",
-        "order": 17,
-        "width": 2,
-        "height": 1
-    },
-    {
         "id": "8fd10179.2c6d3",
         "type": "tls-config",
         "name": "",
@@ -454,6 +301,159 @@
         "caname": "",
         "servername": "",
         "verifyservercert": true
+    },
+    {
+        "id": "80729ab0.831ee8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "eb3adf1f.8164c",
+        "order": 3,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "f3862a43.b31348",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "eb3adf1f.8164c",
+        "order": 4,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "d274c543.2e2418",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "dc2921a9.cfd04",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5d0f94fa.9dc6cc",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "dc2921a9.cfd04",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6ff6c7c1.abacd8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "dc2921a9.cfd04",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e4c2ffac.92a8e",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "95990b3d.d35608",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4be3b582.63acdc",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "95990b3d.d35608",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b357d49.1d8c428",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "88cfddb3.8c3f6",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "97a507af.503908",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "88cfddb3.8c3f6",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "30ccf959.88cea6",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2c6a4316.db726c",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "3cfeda41.73ddc6",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "42014ea5.e9be1",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "f846110d.7b2ef",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d1dd88d7.633738",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 11,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "39410422.7bd0fc",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 15,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "940df6f9.8e0e98",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "b0c87eba.f5866",
+        "order": 17,
+        "width": 2,
+        "height": 1
     },
     {
         "id": "e4a6e92b.a50bd8",
@@ -543,9 +543,9 @@
         "group": "3cdf854a.b3aada",
         "name": "即時影像範例",
         "order": 1,
-        "width": "6",
+        "width": 6,
         "height": 5,
-        "format": "<img id=\"testmjpeg\" style=\"width:100%;height:100%\" src=\"https://thbcctv18.thb.gov.tw/T3-247K+700\">\n<script>\n    setInterval(function(){\n        $(\"#testmjpeg\").attr(\"src\",\"#\");\n        $(\"#testmjpeg\").attr(\"src\",\"https://thbcctv18.thb.gov.tw/T3-247K+700\");\n    }, 20000);\n</script>",
+        "format": "<img id=\"testmjpeg\" style=\"width:100%;height:100%\" src=\"https://thbcctv18.thb.gov.tw/T3-247K+700\">\n<script>\n    setInterval(function(){\n        $(\"#testmjpeg\").attr(\"src\",\"#\");\n        $(\"#testmjpeg\").attr(\"src\",\"https://cctv-ss05.thb.gov.tw:443/T27-58K+600\");\n    }, 20000);\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
